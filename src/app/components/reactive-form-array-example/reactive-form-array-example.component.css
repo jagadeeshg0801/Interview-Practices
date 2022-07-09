@@ -1,0 +1,24 @@
+h3{
+    font-weight: 500;
+}
+
+.main-container{
+    width: 100%;
+    min-height: 30vh;
+}
+
+.left-panel{
+    float: left;
+    width: 40%;
+    
+}
+
+.right-panel{
+    float: right;
+    width: 60%;
+}
+
+.error{
+    color: red;
+    padding-bottom:8px;
+}

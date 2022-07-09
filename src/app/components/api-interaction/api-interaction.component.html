@@ -1,0 +1,23 @@
+<h3>
+<b style="color:red">Note: </b> Integrated Public API, and trying to show data in the screen as a JSON format</h3>
+<br/>
+<b>JSON FORMAT</b>
+<pre>{{userData | json}}</pre>
+
+<hr />
+<br />
+<h3>
+    <b style="color:red">Note: </b> Showing data as  List Of Items 
+    </h3>
+<ul>
+    <li *ngFor="let user of userData"><b>User Name : </b>{{user.name}}, <b>Company Name: </b>{{user.company.name}}</li>
+</ul>
+
+<hr />
+<br />
+<h3>
+    <b style="color:red">Note: </b>Retreiving List Of User Names Only (Directly Consuming User data(names only) from API by using pipe(), map() operators )
+    </h3>
+<ul>
+    <li *ngFor="let name of userNamesList"><b>Name : </b>{{name}}</li>
+</ul>

@@ -1,0 +1,93 @@
+<h3>
+    <b style="color:red">Note: </b>Both Form Group and Form Array are collections of Form Control. The difference is
+    that Form Group aggregates from controls into an object while Form Array aggregates form controls into an array.
+
+</h3>
+<b>Form Building by Using Reactive Forms and contains FormArray</b>
+<br />
+<b>In this below example, formArray control should be showing as array strings</b>
+<br />
+<br />
+<div class="main-container">
+    <div class="left-panel">
+        <div class="form-cls">
+            <form [formGroup]="userForm">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input placeholder="name" formControlName="name" />
+                    <div class="error" *ngIf="f['name'].errors && f['name'].touched">
+                        <div *ngIf="f['name'].errors['required']">Name is Required</div>
+                    </div>
+                </div>
+                <div>
+                    <label>EMAIL</label>
+                    <input placeholder="Email" formControlName="email" />
+                    <div class="error" *ngIf="f['email'].touched && f['email'].errors">
+                        <div *ngIf="f['email'].errors['required']">EMail is Required</div>
+                        <div *ngIf="f['email'].errors['email']">EMail is Invalid</div>
+                    </div>
+                </div>
+                <div>
+                    <label>Address</label>
+                    <div formArrayName="address" *ngFor="let ctr of getUserControls(); let i=index">
+                        <input [formControlName]="i" />
+                    </div>
+                </div>
+                <div>
+                    <label>City</label>
+                    <input formControlName="city" placeholder="city" />
+                </div>
+                <br />
+                <div>
+                    <button type="reset">Reset</button>
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="right-panel">
+
+        <h3>Result:: </h3>
+        {{userForm?.value | json}}
+    </div>
+</div>
+<hr />
+<br />
+<br />
+<b>In this below example, formArray control should be allowing and producing array of strings</b>
+<br />
+<br />
+<br />
+
+<div class="main-container">
+    <div class="left-panel">
+        <div class="form-cls">
+            <form [formGroup]="adminForm">
+                <div class="form-group">
+                    <label>User Name</label>
+                    <input placeholder="name" formControlName="userName" />
+                   
+                </div>
+                <div>
+                    <label>Are You Want mentioned Roles?</label>
+                    <div formArrayName="rolesList" *ngFor="let control of adminFormControls; let j = index;">
+
+                        <div [formGroupName]="j">
+                            <label>Role Type</label>
+                            <input [formControlName]="'role'+getIndex(j)" />
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <button type="reset">Reset</button>
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="right-panel">
+        <h3>Result:: </h3>
+        {{adminForm?.value | json}}
+    </div>
+</div>

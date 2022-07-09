@@ -1,0 +1,24 @@
+<h3>
+    <b style="color:red">Note: </b>By default, pipes are defined as pure so that Angular executes the pipe only when it detects a pure change to the input value. A pure change is either a change to a primitive input value (such as String , Number , Boolean , or Symbol ), or a changed object reference (such as Date , Array , Function , or Object ).
+    <ul>
+        <li>impure-pipe works for every change in the component</li>
+        <li>pure-pipe works only when the component is loaded.</li>
+    </ul>
+    <br />
+    
+    
+    We can forcibly change the pure pipe into impure pipe by including with 
+    <b> pure: false</b> in @Pipe meta tag
+   
+</h3>
+
+<b>Example:: </b>
+<br />
+<label>Enter YOur Number</label>
+<input type="number" placeholder="Enter Number" name="num"  [(ngModel)]="num"/>
+&nbsp; <div *ngIf="num"><b>Get Table with {{num}}</b>
+<ul >
+    <li *ngFor="let t of tablesLimit">{{t | multiplierTable : num}}</li>
+</ul>
+</div>
+

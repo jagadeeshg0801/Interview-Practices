@@ -1,0 +1,56 @@
+.left-panel {
+    width: 24%;
+    max-height: 88vh;
+    border-right: 2px solid;
+    height: 89vh;
+    float: left;
+    overflow-y: auto;
+}
+
+.right-panel {
+    width: 75%;
+    height: 89vh;
+    max-height: 88vh;
+    float: right;
+    overflow-y: auto;
+}
+
+.main-container {
+    border-top: 2px solid green;
+}
+
+ul {
+    padding-left: 0;
+}
+
+ul li {
+    list-style: none;
+    padding: 7px;
+    background: #d7dbff;
+}
+
+ul li:nth-child(odd) {
+    background: #ffe7c0 !IMPORTANT;
+}
+
+ul li a {
+    font-variant: titling-caps;
+    text-decoration: none;
+}
+ul li a::before {
+    content: '*';
+    padding: 6px;
+}
+
+.login-cls{
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+
+.login-cls button{
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: Blue;
+}

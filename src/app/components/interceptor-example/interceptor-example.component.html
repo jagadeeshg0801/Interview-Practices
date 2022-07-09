@@ -1,0 +1,15 @@
+<h3>
+    <b style="color:red">Note: </b> Interceptor Usage is, For suppose we need to add some Request headers in API to send it to backend, then we use the interceptors. 
+here we added API_KEY in the headers by using Interceptor</h3>
+<ul>
+    <li>Step 1: Create a Service and implements <b>HttpInterceptor</b></li>
+    <li>Step 2: In the same service implement  <b>intercept()</b> method and override with your desired logic (like adding headers to the API)</li>
+    <li>Step 3: Import this Service in Provider's section of app.module.ts , config like this <b> provide: HTTP_INTERCEPTORS , useClass: YourClassName </b></li>
+    <li>After loading this screen , just check API Request headers in the browser's tab, then you can see the added <b>api_key</b> like shown in the image</li> 
+</ul>
+<img src="assets/interceptor.PNG" width="900" height="500" />
+    <br/>
+    <b>JSON FORMAT</b>
+    <pre>{{userData | json}}</pre>
+
+    

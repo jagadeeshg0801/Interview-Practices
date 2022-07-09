@@ -1,0 +1,28 @@
+<h3>
+    <b style="color:red">Note: </b> An observer is a data producer of multiple values, "pushing" the values to Observers
+    (Consumers). We can consume the data produced by the observables using the .subscribe() method of an observable.
+
+    Observable has three callback functions
+    <ul>
+        <li> next() :- calls when observable changes value.</li>
+        <li> complete() :- calls when observable completes.</li>
+        <li> error() :- calls when observable throws an error.</li>
+    </ul>
+</h3>
+
+<b>Example</b>
+<br />
+
+<input type="text" (keyup)="changeValue(t1.value)" #t1 placeholder="Enter Your Data" />
+<h4>Entered Value is :: {{recentValue}}</h4>
+
+<br />
+<b>Functional Flow:: </b> Here, when enter anything in the text box, the keyup event will triggered. in that event
+method we just
+updating new value in the <b>BehaviorSubject</b>. When there is a change in the subject's then it will return updated
+value in subscription time (here subscription happens in ngOnInit() block ).
+<br />
+<br />
+<b>Code Snippet:</b>
+<br />
+<img src="assets/subject-behavior.PNG" width="780" height="700" />

@@ -1,0 +1,42 @@
+<h3>
+    <b style="color:red">NOTE::</b> Directives are the functions which will execute whenever the Angular compiler finds it. Angular Directives enhance the capability of HTML elements by attaching custom behaviors to the DOM.
+    Angular directives are categorized into three categories.
+    <ul>
+        <li>Attribute  ex: ngClass, ngStyle</li>
+        <li>Structural ex: *ngFor, *ngFor  </li>
+        <li>Component </li>
+    </ul>
+    
+</h3>
+<b>Example:: For custom Attribute directive</b>
+<br />
+<div>
+    <br />
+    Choose Your Color, and hover the below text. To see the choosen color for it.
+    <select style="width: 100px" [(ngModel)]="selectedColor" name="n1">
+
+        <option value="black">Black</option>
+        <option value="red">RED</option>
+        <option value="blue">BLUE</option>
+        <option value="pink">PINK</option>
+    </select>
+    <h2 appHighlightDirect [color]="selectedColor">When you hover this paragraph , color will be changed to Red, Other
+        wise its inherit black color</h2>
+</div>
+
+
+<br />
+<br>
+<b>Example:: For Custom Conditional Directive</b>
+<h5>
+    DO you want to see the image or not? {{selectedOption}}
+    <select style="width: 150px" [(ngModel)]="selectedOption" name="n2">
+
+        <option value="false" default selected>No</option>
+        <option value="true">YES</option>
+    </select>
+    <br />
+    <div class="" *jshIf="selectedOption">
+        <img src="assets/car1.png" width="400" height="400" />
+    </div>
+</h5>
